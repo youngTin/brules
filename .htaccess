@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+#   RewriteRule    ^$    webroot/    [L]
+#   RewriteRule    (.*) webroot/$1    [L]
+
+#   RewriteCond %{HTTP_HOST} ^[a-z0-9\-]+\.fun\.com
+#   RewriteRule ^/?$ /%{HTTP_HOST}
+#   RewriteRule ^/([a-z0-9\-]+)\.fun\.com/?$ http://localhost/index.php?{QUERY_STRING}&user_name=123 [L]
+
+RewriteRule    ^serv/save.shtml  br_serv_temp.php    [L]
+RewriteRule    ^serv/([0-9-a-zA-Z_]+).shtml  br_serv_temp.php?action=$1&type=$1    [L]
+RewriteRule    ^([0-9-a-zA-Z_]+).shtml$ br_$1.php    [L]
+RewriteRule    ^([0-9-a-zA-Z_]+).html$ member_$1.php    [L]
+RewriteRule    ^i/([0-9]+)$ member_reg_new.php?inuser=$1    [L]
+
+ </IfModule>
+
+ErrorDocument 404 /data/errors/404.php

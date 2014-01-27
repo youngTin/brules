@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Ajax AutoComplete for jQuery</title>
+  
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link href="Ajax%20AutoComplete%20for%20jQuery_files/css.css" rel="stylesheet" type="text/css">
+  <link href="Ajax%20AutoComplete%20for%20jQuery_files/ba932622-7896-45a5-81fa-8673886d629d.css" rel="stylesheet" type="text/css">
+  <link href="Ajax%20AutoComplete%20for%20jQuery_files/screen.css" rel="stylesheet" media="screen, projection" type="text/css">
+  <link href="Ajax%20AutoComplete%20for%20jQuery_files/widgets.css" rel="stylesheet" type="text/css">
+  <link href="Ajax%20AutoComplete%20for%20jQuery_files/lightbox.css" rel="stylesheet" type="text/css">
+  <script src="Ajax%20AutoComplete%20for%20jQuery_files/all.js" id="facebook-jssdk"></script><script src="Ajax%20AutoComplete%20for%20jQuery_files/tracking.js" async="" type="text/javascript"></script><script src="Ajax%20AutoComplete%20for%20jQuery_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/jquery_002.js"></script>
+  
+  
+  <style type="text/css">
+    #dbcms-content-2t11 .projects-websites { margin: 40px 0;}
+#dbcms-content-2t11 .projects-websites ul { list-style: none; margin: 0; padding: 0 0 20px;}
+#dbcms-content-2t11 .projects-websites li { font-size: 13px; font-weight: bold; font-family: arial, sans-serif; text-shadow: 0 1px 0 #fff;}
+#dbcms-content-2t11 .projects-websites .btn-small { background:#C01010 }
+
+  </style>
+
+  <link rel="icon" href="http://www.devbridge.com/favicon.ico" type="image/x-icon"> 
+  <link rel="shortcut icon" href="http://www.devbridge.com/favicon.ico" type="image/x-icon"> 
+  
+<script type="text/javascript">
+    (function () {
+        var now = new Date();
+        if (now.getDate() === 18 && now.getMonth() === 0 && now.getFullYear() === 2012) {
+            window.location = "http://sopastrike.com/strike";
+        }
+    } ())
+</script>
+
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size: 11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size: 24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size: 14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yO/r/_j03izEX40U.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size: 12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size: 12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size: 16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:relative;vertical-align:text-bottom}
+.fb_iframe_widget span{position:relative}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yH/r/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size: 24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size: 13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size: 11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size: 10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size: 10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size: 22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yU/r/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yX/r/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size: 10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size: 11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size: 13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size: 13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size: 11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}
+</style></head>
+<body id="top"> 
+  <div id="page-header">
+    <div class="container-extended">
+      <a href="http://www.devbridge.com/" class="logo"><img src="Ajax%20AutoComplete%20for%20jQuery_files/logo.png" alt="DevBridge Logo"></a>
+              <div id="navigation">
+          <div id="navigation-bg">
+          </div>
+          <ul>
+            <li><a href="http://www.devbridge.com/">Home</a><span>|</span></li>
+            <li class="parent">
+              <a href="http://www.devbridge.com/solutions/">Solutions</a><span>|</span>
+              <ul class="child-menu">
+                <li><a href="http://www.devbridge.com/solutions/web-development/">Web Development</a></li>
+                <li><a href="http://www.devbridge.com/solutions/mobile/">Mobile</a></li>
+                <li><a href="http://www.devbridge.com/solutions/agency/">Agency Partnerships</a></li>
+              </ul>
+            </li>
+            <li class="parent">
+              <a href="http://www.devbridge.com/products/">Products</a><span>|</span>
+              <ul class="child-menu">
+                <li><a href="http://www.devbridge.com/products/net-cms/">Content Management</a></li>
+                <li><a href="http://www.devbridge.com/products/e-commerce/">E-Commerce</a></li>
+                <li><a href="http://www.devbridge.com/products/association-management/">Association Management</a></li>
+              </ul>
+            </li>
+            <li><a href="http://www.devbridge.com/clients/">Clients</a><span>|</span></li>
+            <li><a href="http://www.devbridge.com/team/">Team</a><span>|</span></li>
+            <li><a href="http://www.devbridge.com/articles/">Blog</a></li>
+          </ul>
+        </div>
+        <a id="contactbtn" href="http://www.devbridge.com/proposal/" class="red-button big">Contact Us</a>
+
+    </div>
+  </div>
+
+  <div class="container">
+    
+    
+<div class="dbcms-content" id="dbcms-ctl-3t99">
+<div class="dbcms-contenttext dbcms-clearfix" id="dbcms-content-3t99">
+
+<div class="jquery-heading container clearafter">
+  <div class="half-column">
+    <h1 class="title">Ajax AutoComplete for jQuery</h1>
+    <p>Ajax Autocomplete for jQuery allows you to easily create autocomplete/autosuggest boxes for text input fields.</p>
+    <p>Built with focus on performance - results for every query are 
+cached and pulled from local cache for the same repeating query. If 
+there are no results for particular query it stops sending requests to 
+the server for other queries with the same root.</p>
+    <p><em class="helper">Latest version: 1.1.3</em></p>
+    <a class="red-button big" href="http://dbcms.s3.amazonaws.com/devbridgecom/documents/8b8c05c83af3556/jquery.autocomplete-1.1.3.zip">Download</a>
+  </div>
+  <div class="half-column demo" style="margin: 0; float: right;">
+    <img alt="Ajax AutoComplete for jQuery Live Demo" src="Ajax%20AutoComplete%20for%20jQuery_files/live-demo.jpg">
+    <div class="trans-box-light">
+      <div class="ajax-demo">
+        <h3>Ajax AutoComplete Demo</h3>
+        <label>Country Name:</label><br>
+        <input value="Lao People's Democratic Republic" autocomplete="off" class="textbox" id="query" type="text"> <label><input onclick="this.checked ? a1.disable() : a1.enable();" type="checkbox">Disable autocomplete</label>
+      </div>
+      <div class="no-ajax-demo">
+        <h3>Local (no ajax) AutoComplete Demo</h3>
+        <label>Month of Year:</label><br>
+        <input value="December" autocomplete="off" class="textbox" id="months" name="q" type="text">
+        <div class="suggest">
+          <strong>Suggest:</strong> <label><input checked="checked" name="Suggest" onclick="InitMonths();" type="radio">Month</label> <label><input name="Suggest" onclick="InitWeekdays();" type="radio">Weekday</label>
+        </div>
+      </div>
+    </div>
+    <em class="helper">Delimiter support has been added in v1.0.5. Try separate countries by "," or ";".</em> <script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/jquery_003.js"></script><script type="text/javascript">
+  //<![CDATA[
+
+    var a1;
+    var a2;
+
+    function InitMonths() {
+        a2.setOptions({ lookup: 'January,February,March,April,May,June,July,August,September,October,November,December'.split(',') });
+    }
+
+    function InitWeekdays() {
+        a2.setOptions({ lookup: 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday'.split(',') });
+    }
+
+    jQuery(function () {
+
+        var onAutocompleteSelect = function(value, data) {
+            $('#selection').html('<img src="\/global\/flags\/small\/' + data + '.png" alt="" \/> ' + value);
+            //alert(data);
+        };
+
+        var options = {
+            serviceUrl: '/Projects/GetSuggestions/',
+            width: 384,
+            delimiter: /(,|;)\s*/,
+            onSelect: onAutocompleteSelect,
+            deferRequestBy: 0, //miliseconds
+            params: { country: 'Yes' },
+            noCache: false //set to true, to disable caching
+        };
+
+        a1 = $('#query').autocomplete(options);
+
+        a2 = $('#months').autocomplete({
+            width: 384,
+            delimiter: /(,|;)\s*/,
+            lookup: 'January,February,March,April,May,June,July,August,September,October,November,December'.split(',')
+        });
+
+        $('#navigation a').each(function () {
+            $(this).click(function (e) {
+                var element = $(this).attr('href');
+                $('html').animate({ scrollTop: $(element).offset().top }, 300, null, function () { document.location = element; });
+                e.preventDefault();
+            });
+        });
+
+    });
+  
+//]]>
+</script>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+    <div class="clearafter" style="position: relative;">
+      <div class="main-sidebar" id="main-sidebar">
+        
+<div class="dbcms-content" id="dbcms-ctl-3t100">
+<div class="dbcms-contenttext dbcms-clearfix" id="dbcms-content-3t100">
+
+<div class="sidebar-block">
+  <ul class="menu" id="projects-menu">
+    <li>
+      <a href="#whats-new">What’s New</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#how-to-use">How to Use</a>
+    </li>
+    <li>
+      <a href="#styling">Styling</a>
+    </li>
+    <li style="border: none;">
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript">
+
+  	$(function () {
+
+  	  initSideMenu();
+
+  	  $('#projects-menu a').click(function (e) {
+  	    var link = $(this).attr('href');
+  	    $('body,html,document').animate({ scrollTop: $(link).offset().top }, 400);
+  	    e.preventDefault(e);
+  	  });
+
+  	});
+          
+    </script>
+
+</div>
+</div>
+
+
+<div class="dbcms-content" id="dbcms-ctl-1t220">
+<div class="dbcms-contenttext dbcms-clearfix" id="dbcms-content-1t220">
+
+
+<h2>Subscribe to Updates</h2>
+<div class="transperent-box projects-subscribe">
+    <form class="newsletter-subscription-form" method="post" data-ajax-method="POST" data-ajax="true" action="/SharedUtils/NewsletterSignup/" data-ajax-success="devbridge.eventHandlers.onNewsletterSubscribed">
+	    <input name="Email" class="textbox" required="" type="email">
+	    <button type="submit" class="btn-submit">Subscribe</button>
+	    <p class="icon-lock">Your email will not be shared with Nigerian princes or long lost family members with inheritances.</p>
+    </form>
+</div>
+
+</div>
+</div>
+
+
+<div class="dbcms-content" id="dbcms-ctl-2t11">
+<div class="dbcms-contenttext dbcms-clearfix" id="dbcms-content-2t11">
+
+<div class="projects-websites">
+  <h2>Websites Using</h2>
+  <ul class="links">
+    <li>
+      <a href="http://www.bisonoffice.com/" target="_blank">BisonOffice.com</a>
+    </li>
+    <li>
+      <a href="http://www.ascenderfonts.com/" target="_blank">AscenderFonts.com</a>
+    </li>
+    <li>
+      <a href="http://globalhotelreview.com/" target="_blank">GlobalHotelReview.com</a>
+    </li>
+    <li>
+      <a href="http://tangocms.org/" target="_blank">TangoCMS.org</a>
+    </li>
+    <li>
+      <a href="http://gloria.tv/" target="_blank">Gloria.tv</a>
+    </li>
+    <li>
+      <a href="http://aboutrooms.com/" target="_blank">AboutRooms.com</a>
+    </li>
+    <li>
+      <a href="http://dosspirit.net/" target="_blank">DosSpirit.net</a>
+    </li>
+    <li>
+      <a href="http://bobef.net/dictionary/" target="_blank">Bobef.net</a>
+    </li>
+  </ul>
+</div>
+
+</div>
+</div>
+
+
+      </div>
+      <div class="main-content-block white-box">
+        
+
+              
+        
+<div class="dbcms-content" id="dbcms-ctl-3t101">
+<div class="dbcms-contenttext dbcms-clearfix" id="dbcms-content-3t101">
+
+<div id="main-content">
+  <div id="whats-new">
+    <h2>What’s New in 1.1</h2>
+    <p><strong>$('#query').autocomplete(options)</strong> now returns an Autocomplete instance only for the first matched element.</p>
+    <p>Autocomplete functionality can be disabled or enabled programmatically.</p>
+    <pre class="prettyprint"><span class="kwd">var</span><span class="pln"> ac </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#query'</span><span class="pun">).</span><span class="pln">autocomplete</span><span class="pun">(</span><span class="pln">options</span><span class="pun">);</span><span class="pln"><br>ac</span><span class="pun">.</span><span class="pln">disable</span><span class="pun">();</span><span class="pln"><br>ac</span><span class="pun">.</span><span class="pln">enable</span><span class="pun">();</span></pre>
+    <p>Options can be changed programmatically at any time, only options that are passed get set:</p>
+    <pre class="prettyprint"><span class="pln">ac</span><span class="pun">.</span><span class="pln">setOptions</span><span class="pun">({</span><span class="pln"> zIndex</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1001</span><span class="pln"> </span><span class="pun">});</span></pre>
+    <p>If you need to pass additional parameters, you can set them via setOptions too:</p>
+    <pre class="prettyprint"><span class="pln">ac</span><span class="pun">.</span><span class="pln">setOptions</span><span class="pun">({</span><span class="pln"> </span><span class="kwd">params</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> first</span><span class="pun">:</span><span class="str">'John'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">last</span><span class="pun">:</span><span class="str">'Doe'</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="pun">});</span></pre>
+    <p>New parameters when initializing autocomplete. They can also be set via setOptions.</p>
+    <p>- zIndex: default value is 9999.</p>
+    <p>- fnFormatResult: function that formats values that are displayed
+ in the autosuggest list. It takes three parameters: suggested value, 
+data and current query value. Default function for this:</p>
+    <pre class="prettyprint"><span class="kwd">var</span><span class="pln"> reEscape </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">RegExp</span><span class="pun">(</span><span class="str">'(\\'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="str">'/'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'.'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'*'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'+'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'?'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'|'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'('</span><span class="pun">,</span><span class="pln"> </span><span class="str">')'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'['</span><span class="pun">,</span><span class="pln"> </span><span class="str">']'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'{'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'}'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'\\'</span><span class="pun">].</span><span class="pln">join</span><span class="pun">(</span><span class="str">'|\\'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">')'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'g'</span><span class="pun">);</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> fnFormatResult</span><span class="pun">(</span><span class="pln">value</span><span class="pun">,</span><span class="pln"> data</span><span class="pun">,</span><span class="pln"> currentValue</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> pattern </span><span class="pun">=</span><span class="pln"> </span><span class="str">'('</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> currentValue</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">reEscape</span><span class="pun">,</span><span class="pln"> </span><span class="str">'\\$1'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">')'</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> value</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">RegExp</span><span class="pun">(</span><span class="pln">pattern</span><span class="pun">,</span><span class="pln"> </span><span class="str">'gi'</span><span class="pun">),</span><span class="pln"> </span><span class="str">'&lt;strong&gt;$1&lt;\/strong&gt;'</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span></pre>
+  </div>
+  <div id="installation">
+    <h2>Installation</h2>
+    <p>Include <strong><a href="http://jquery.com/" target="_blank">jQuery</a></strong> in your header. After its included, add autocomplete script.</p>
+    <pre class="prettyprint"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"jquery.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln"><br></span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"jquery.autocomplete.js"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+  </div>
+  <div id="how-to-use">
+    <h2>How to Use</h2>
+    <p>Here is an Ajax Autocomplete sample for the text field with id "query"</p>
+    <pre class="prettyprint"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"q"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"query"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+    <p>Create an instance of the Autocomplete object. You can have multiple instances on a single page.</p>
+    <p><strong>Important:</strong> Autocomplete must be initialized after DOM has finished loading. Otherwise you will get an error in IE.</p>
+    <pre class="prettyprint"><span class="kwd">var</span><span class="pln"> options</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">;</span><span class="pln"><br>jQuery</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln"><br>&nbsp; options </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> serviceUrl</span><span class="pun">:</span><span class="str">'service/autocomplete.ashx'</span><span class="pln"> </span><span class="pun">};</span><span class="pln"><br>&nbsp; a </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#query'</span><span class="pun">).</span><span class="pln">autocomplete</span><span class="pun">(</span><span class="pln">options</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">});</span></pre>
+    <p>You can add extra options:</p>
+    <pre class="prettyprint"><span class="pln">&nbsp; </span><span class="kwd">var</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#query'</span><span class="pun">).</span><span class="pln">autocomplete</span><span class="pun">({</span><span class="pln"> <br>&nbsp; &nbsp; serviceUrl</span><span class="pun">:</span><span class="str">'service/autocomplete.ashx'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; minChars</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> <br>&nbsp; &nbsp; delimiter</span><span class="pun">:</span><span class="pln"> </span><span class="str">/(,|;)\s*/</span><span class="pun">,</span><span class="pln"> </span><span class="com">// regex or character</span><span class="pln"><br>&nbsp; &nbsp; maxHeight</span><span class="pun">:</span><span class="lit">400</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; width</span><span class="pun">:</span><span class="lit">300</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; zIndex</span><span class="pun">:</span><span class="pln"> </span><span class="lit">9999</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; deferRequestBy</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="com">//miliseconds</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">params</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> country</span><span class="pun">:</span><span class="str">'Yes'</span><span class="pln"> </span><span class="pun">},</span><span class="pln"> </span><span class="com">//aditional parameters</span><span class="pln"><br>&nbsp; &nbsp; noCache</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln"> </span><span class="com">//default is false, set to true to disable caching</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// callback function:</span><span class="pln"><br>&nbsp; &nbsp; onSelect</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">value</span><span class="pun">,</span><span class="pln"> data</span><span class="pun">){</span><span class="pln"> alert</span><span class="pun">(</span><span class="str">'You selected: '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> value </span><span class="pun">+</span><span class="pln"> </span><span class="str">', '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> data</span><span class="pun">);</span><span class="pln"> </span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// local autosugest options:</span><span class="pln"><br>&nbsp; &nbsp; lookup</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'January'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'February'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'March'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'April'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'May'</span><span class="pun">]</span><span class="pln"> </span><span class="com">//local lookup values </span><span class="pln"><br>&nbsp; </span><span class="pun">});</span></pre>
+    <p>Use <strong>lookup</strong> option only if you prefer to inject an array of autocompletion options, rather than sending Ajax queries.</p>
+    <p>Web page that provides data for Ajax Autocomplete, in our case <strong>autocomplete.ashx</strong> will receive GET request with querystring <strong>?query=Li</strong>, and it must return JSON data in the following format:</p>
+    <pre class="prettyprint"><span class="pun">{</span><span class="pln"><br>&nbsp;query</span><span class="pun">:</span><span class="str">'Li'</span><span class="pun">,</span><span class="pln"><br>&nbsp;suggestions</span><span class="pun">:[</span><span class="str">'Liberia'</span><span class="pun">,</span><span class="str">'Libyan Arab Jamahiriya'</span><span class="pun">,</span><span class="str">'Liechtenstein'</span><span class="pun">,</span><span class="str">'Lithuania'</span><span class="pun">],</span><span class="pln"><br>&nbsp;data</span><span class="pun">:[</span><span class="str">'LR'</span><span class="pun">,</span><span class="str">'LY'</span><span class="pun">,</span><span class="str">'LI'</span><span class="pun">,</span><span class="str">'LT'</span><span class="pun">]</span><span class="pln"><br></span><span class="pun">}</span></pre>
+    <p>Notes:</p>
+    <ul>
+      <li>
+        <strong>query</strong> - original query value
+      </li>
+      <li>
+        <strong>suggestions</strong> - comma separated array of suggested values
+      </li>
+      <li>
+        <strong>data</strong> (optional) - data array, that contains values for callback function when data is selected.
+      </li>
+    </ul>
+  </div>
+  <div id="styling">
+    <h2>Styling</h2>
+    <p>Script generates the following HTML (sample query <strong>Li</strong>). Active element when you navigate up and down is marked with class "selected". You can style it any way you wish.</p>
+    <pre class="prettyprint lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"autocomplete-w1"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"</span><span class="kwd">width</span><span class="pun">:</span><span class="lit">299px</span><span class="pun">;</span><span class="atv">"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Autocomplete_1240430421731"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"autocomplete"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div&gt;&lt;strong&gt;</span><span class="pln">Li</span><span class="tag">&lt;/strong&gt;</span><span class="pln">beria</span><span class="tag">&lt;/div&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div&gt;&lt;strong&gt;</span><span class="pln">Li</span><span class="tag">&lt;/strong&gt;</span><span class="pln">byan Arab Jamahiriya</span><span class="tag">&lt;/div&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div&gt;&lt;strong&gt;</span><span class="pln">Li</span><span class="tag">&lt;/strong&gt;</span><span class="pln">echtenstein</span><span class="tag">&lt;/div&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"selected"</span><span class="tag">&gt;&lt;strong&gt;</span><span class="pln">Li</span><span class="tag">&lt;/strong&gt;</span><span class="pln">thuania</span><span class="tag">&lt;/div&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/div&gt;</span><span class="pln"><br></span><span class="tag">&lt;/div&gt;</span></pre>
+    <p>Here is style used in the sample above:</p>
+    <pre class="prettyprint lang-css"><span class="pun">.</span><span class="pln">autocomplete-w1 </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">background</span><span class="pun">:</span><span class="kwd">url</span><span class="pun">(</span><span class="str">img/shadow.png</span><span class="pun">)</span><span class="pln"> no-repeat bottom right</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">position</span><span class="pun">:</span><span class="pln">absolute</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">top</span><span class="pun">:</span><span class="lit">0px</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">left</span><span class="pun">:</span><span class="lit">0px</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">margin</span><span class="pun">:</span><span class="lit">6px</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">6px</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6 fix: */</span><span class="pln"> </span><span class="kwd">_background</span><span class="pun">:</span><span class="pln">none</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">_margin</span><span class="pun">:</span><span class="lit">1px</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">.</span><span class="pln">autocomplete </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">border</span><span class="pun">:</span><span class="lit">1px</span><span class="pln"> solid </span><span class="lit">#999</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">background</span><span class="pun">:</span><span class="lit">#FFF</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">cursor</span><span class="pun">:</span><span class="pln">default</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">text-align</span><span class="pun">:</span><span class="pln">left</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">max-height</span><span class="pun">:</span><span class="lit">350px</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">overflow</span><span class="pun">:</span><span class="pln">auto</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">margin</span><span class="pun">:-</span><span class="lit">6px</span><span class="pln"> </span><span class="lit">6px</span><span class="pln"> </span><span class="lit">6px</span><span class="pln"> </span><span class="pun">-</span><span class="lit">6px</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6 specific: */</span><span class="pln"> </span><span class="kwd">_height</span><span class="pun">:</span><span class="lit">350px</span><span class="pun">;</span><span class="pln"> &nbsp;</span><span class="kwd">_margin</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">_overflow-x</span><span class="pun">:</span><span class="pln">hidden</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">.</span><span class="pln">autocomplete </span><span class="pun">.</span><span class="pln">selected </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">background</span><span class="pun">:</span><span class="lit">#F0F0F0</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">.</span><span class="pln">autocomplete div </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">padding</span><span class="pun">:</span><span class="lit">2px</span><span class="pln"> </span><span class="lit">5px</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">white-space</span><span class="pun">:</span><span class="pln">nowrap</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">overflow</span><span class="pun">:</span><span class="pln">hidden</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">.</span><span class="pln">autocomplete strong </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">font-weight</span><span class="pun">:</span><span class="pln">normal</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">color</span><span class="pun">:</span><span class="lit">#3399FF</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span></pre>
+    <p>If you will use this CSS, please make sure to correct path to the shadow.png image. Image is included in the package. It uses <a href="http://alistapart.com/articles/cssdropshadows">CSS Drop Shadow</a> technique by Sergio Villarreal.</p>
+  </div>
+  <div id="contact">
+    <h2>Contact</h2>
+    <p>Contact me <a href="mailto:tomas@devbridge.com?subject=[jQuery%20Autocomplete]">tomas@devbridge.com</a> for feedback and bug reports.</p>
+    <p>If you'd like to speak with us about your software development project, then please <a href="http://www.devbridge.com/proposal/">contact us</a>.</p>
+  </div>
+</div>
+<script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/prettify.js"></script><script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/lang-css.js"></script><script type="text/javascript">
+$( function () { prettyPrint(); } );
+</script>
+
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+    
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  <div class="footer-block">
+    <a href="#" class="btn-back-top" id="btn-back-top">back to top</a>
+    <div class="container">
+      <div class="sitemap">
+        <a href="http://www.devbridge.com/proposal/" class="red-button">Contact Us</a>
+        <div class="clearafter">
+        
+            <!-- Left Column -->
+            <div class="sitemap-left">
+          
+              <div class="clearafter">
+				<div class="sitemap-block colums3" style="margin-right: 0;">
+                    <h3>Services</h3>
+                    <ul>
+                      <li><a href="http://www.devbridge.com/solutions/mobile/">Mobile Solutions</a></li>
+                      <li><a href="http://www.devbridge.com/solutions/agency/">Agency Partnerships</a></li>
+                      <li><a href="http://www.devbridge.com/products/association-management/">Association Solutions</a></li>
+                      <li><a href="http://www.devbridge.com/solutions/web-development/">Custom Web Development</a></li>
+                      <li><a href="http://www.devbridge.com/products/e-commerce/">E-Commerce</a></li>
+                      <li><a href="http://www.devbridge.com/products/net-cms/">CMS</a></li>
+                    </ul>
+                  </div>
+                  <div class="sitemap-block colums3">
+                    <h3>Case Studies</h3>
+                    <ul>
+                      <li><a href="http://www.devbridge.com/case-studies/sarpinos/">Sarpino's</a></li>
+                      <li><a href="http://www.devbridge.com/case-studies/association-management/">Association Management</a></li>
+                      <li><a href="http://www.devbridge.com/case-studies/scan/">SCAN</a></li>
+                      <li><a href="http://www.devbridge.com/case-studies/nra/">NRA</a></li>
+                      <li><a href="http://www.devbridge.com/case-studies/aircycle/">Air Cycle</a></li>
+                      <li><a href="http://www.devbridge.com/case-studies/lmc/">LMC</a></li>
+                    </ul>
+                  </div>
+				  <div class="sitemap-block colums3" style="margin-right: 0;">
+                    <h3>Recent Projects</h3>
+                    <ul>
+                      <li><a href="http://www.loaddelivered.com/" target="_blank">Load Delivered</a></li>
+                      <li><a href="http://www.webtype.com/" target="_blank">Webtype</a></li>
+                      <li><a href="http://www.servicebridge.com/" target="_blank">Service Bridge</a></li>
+                      <li><a href="http://www.scandpg.org/" target="_blank">SCAN</a></li>
+                      <li><a href="http://www.americandigital.com/" target="_blank">American Digital</a></li>
+                      <li><a href="http://www.webfontspreview.com/" target="_blank">Web Fonts Preview</a></li>
+                      <li><a href="http://www.tripbaltic.com/" target="_blank">TripBaltic</a></li>
+                    </ul>
+                  </div>
+              </div>
+
+              <div class="clearafter footer-blog-posts">
+                <h3>From Our Blog</h3>
+                <ul>
+                    <li><a href="http://www.devbridge.com/articles/plans-for-2012-and-beyond/">A Message From Your Favorite Vendor</a></li>
+                    <li><a href="http://www.devbridge.com/articles/tronic-buyer-launches/">TronicBuyer.com Launches</a></li>
+                    <li><a href="http://www.devbridge.com/articles/devbridge-goes-dark-for-sopa-protest/">DevBridge Goes Dark for SOPA Protest</a></li>
+                </ul>
+                
+                <ul>
+                    <li><a href="http://www.devbridge.com/articles/spice-your-type/">OpenType Feature Demo for IE10</a></li>
+                    <li><a href="http://www.devbridge.com/articles/sellfy-simplified-e-commerce-for-digital-products/">Sellfy - E-Commerce For Digital Products</a></li>
+                    <li><a href="http://www.devbridge.com/articles/how-websites-are-made/">Our Process: From Concept to Solution</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-flickr clearafter">
+                <h3>A Closer look at DevBridge</h3>
+                    
+                <div class="flick-photos clearafter">
+                      <a rel="lightbox" href="http://farm6.static.flickr.com/5206/5224982647_05cfd6375d.jpg"><img src="Ajax%20AutoComplete%20for%20jQuery_files/5224982647_05cfd6375d_s.jpg" alt="IMG_7588"></a>
+                      <a rel="lightbox" href="http://farm8.static.flickr.com/7005/6708295031_27c81ba5fd.jpg"><img src="Ajax%20AutoComplete%20for%20jQuery_files/6708295031_27c81ba5fd_s.jpg" alt="6B7V7919"></a>
+                      <a rel="lightbox" href="http://farm7.static.flickr.com/6058/6243103225_4e2d815146.jpg"><img src="Ajax%20AutoComplete%20for%20jQuery_files/6243103225_4e2d815146_s.jpg" alt="Kaunas Office"></a>
+                </div>
+
+                <p>Sometimes it feels like the world doesn't exist 
+outside of DevBridge. Catch a glimpse of our everyday lives at a place 
+which most of us call our second home. <a href="http://www.flickr.com/photos/devbridge" target="_blank">See more on Flickr</a></p>
+                
+              </div>
+            </div>
+            <!-- Left Column End -->
+
+            <div class="sitemap-right">
+              <h3>Contact</h3>
+              DevBridge, Inc.,<br>
+              450 N. Paulina St. Suite 2N<br>
+              Chicago, IL 60622<br><br>
+
+              Ph. 312 242 1642<br>
+              Fax 847 232 3114<br><br>
+
+              <a href="http://www.facebook.com/DevBridge" target="_blank" class="btn-social facebook">Facebook</a><br>
+              <a href="http://twitter.com/devbridge" target="_blank" class="btn-social twitter">Twitter</a>
+
+              <div class="logo-ms">
+                <img src="Ajax%20AutoComplete%20for%20jQuery_files/footer-microsoft-partner.jpg" alt="Microsoft Silver Software Development Partner">
+              </div>
+
+            </div>
+
+         </div>
+        
+        <div class="sitemap-subscribe">
+          <h3>Subscribe to receive web development news</h3>
+          <form id="nform" onsubmit="SubscribeNewsletter(this); return false;" class="newsletter-subscription-form subscribeform" method="post" action="/SharedUtils/NewsletterSignup/">
+            <input name="email" class="textbox" placeholder="Enter Your Email Address" title="Your Email Address" required="" type="email">
+            <input value="Subscribe" class="subscribe-btn" type="submit">
+          </form>
+          <p class="sitemap-copyright">
+            © 2012 DevBridge, Inc. All Rights Reserved.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4039761-3']);
+  _gaq.push(['_trackPageview']);
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+  var releadTrackingId = 'beed8241423646742d36a1f76f7cbe0e';
+  (function () {
+    var rl = document.createElement('script');
+    rl.type = 'text/javascript';
+    rl.async = true;
+    rl.src = (document.location.protocol == 'https:' ? 'https://' : 'http://') + 'relead.s3.amazonaws.com/tracking.relead.js';
+    var e = document.getElementsByTagName('script')[0];
+    e.parentNode.insertBefore(rl, e);
+  })();
+</script>
+
+
+  <script type="text/javascript">
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/lightbox.js"></script>
+  <script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/jquery.js"></script>
+  <script type="text/javascript" src="Ajax%20AutoComplete%20for%20jQuery_files/devbridge.js"></script>
+  
+  
+
+
+
+<div id="AutocompleteContainter_5760f" style="position: absolute; z-index: 9999; top: 281px; left: 727.5px;"><div class="autocomplete-w1"><div class="autocomplete" id="Autocomplete_5760f" style="width: 384px; max-height: 300px; display: none;"><div class="selected" title="Lao People's Democratic Republic"><strong>Lao Peop</strong>le's Democratic Republic</div></div></div></div><div id="AutocompleteContainter_413d5" style="position: absolute; z-index: 9999; top: 392px; left: 727.5px;"><div class="autocomplete-w1"><div class="autocomplete" id="Autocomplete_413d5" style="width: 384px; max-height: 300px; display: none;"><div class="selected" title="December"><strong>D</strong>ecember</div></div></div></div></body></html>

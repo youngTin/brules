@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新楼盘详细介绍页面</title>
+<link href="/ui/css/common.css" rel="stylesheet" type="text/css" >
+<link href="/ui/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/ui/newhouse/css/newhxx.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ui/newhouse/js/jquery_last.js"></script>
+<script type="text/javascript" src="/ui/newhouse/js/amline_1.6.4.1/amline/swfobject.js"></script>
+</head>
+<style>
+table#border{border-top:#c0c0c0 1px solid;border-left:#c0c0c0 1px solid}
+table#border td{border-bottom:#c0c0c0 1px solid;border-right:#c0c0c0 1px solid}
+.highlightit img{border: 1px solid #ccc}
+.date_01 a:hover{height:100px;width:100px;display:inline;position:absolute;border:1px solid navy;filter:alpha(opacity=80);background:url(http://avatar.csdn.net/4/7/5/1_sunkists.jpg) no-repeat 0 0}
+.highlightit:hover{color: red; /* Dummy definition to overcome IE bug */}
+.sitebox01{text-align:left;height:23px;line-height:23px;margin:10px 0 6px 0;}
+</style>
+
+<body>
+<div class="outer">
+<div class=header>
+    <div class="login-block">
+        <span>欢迎您访问房产百科网！<!--<a href="#">登录</a> 或 <a href="#">注册</a>--></span><br />
+    </div>
+    <div class="menu">
+        <ul class="topnav">
+            <li {if $cur=='home'}class="cur"{/if}><a href="/">首 页</a> </li>
+            <li {if $cur=='newhouse'}class="cur"{/if} onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/newhouse/search.php">新 房</a>
+				<ul class=subnav>
+                    <li style="width:100px">
+                    <ul id="layout-list">
+                        <li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">住宅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22304">商业楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22305">办公楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22301">别墅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">畅销楼盘</a></li>
+                    </ul>
+                    </li>
+                    <li style="width:200px">
+                    <ul id="layout-list">
+                        <li class="f_bold f_333" style="width:180px;">购房工具</li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">楼盘地图</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">购房指南</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php">楼盘速查</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">政务公开服务</a></li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">预售公示</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">贷款计算器</a></li>
+                    </ul>
+                    </li>
+                </ul>
+			</li>
+            <li {if $cur=='resold'}class="cur"{/if}><a href="/esf/index.php?house_type=2">二手房</a> </li>
+		    <li {if $cur=='rent'}class="cur"{/if}><a href="/esf/index.php?house_type=1">租 房</a> </li>
+            <li {if $cur=='news'}class="cur"{/if}><a href="/news/index.php">房产资讯</a></li>
+        </ul>
+    </div>
+    <form name="searchform" action="/newhouse/search.php" method="get">
+        <div class="search">
+            <div class="key-word">
+                <span class="f_bold f_gray f_14px">关键字 </span>
+                <input class="input_460px" name="keyword" />
+                <input type="submit" class="btn" value=" " />
+            </div>
+            <div class="chos_area">
+                <div id="search-region">
+					<ul>
+					<li>区域:</li>
+					<li><a href="/newhouse/search.php" target="_self" class="f_orange f_bold">不限</a></li>
+                    <li><a href="/newhouse/search.php?borough=510104" target="_self" >锦江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510105" target="_self" >青羊区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510106" target="_self" >金牛区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510107" target="_self" >武侯区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510108" target="_self" >成华区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510109" target="_self" >高新区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510112" target="_self" >龙泉驿区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510113" target="_self" >青白江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510121" target="_self" >金堂县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510122" target="_self" >双流县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510123" target="_self" >温江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510124" target="_self" >郫县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510125" target="_self" >新都区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510129" target="_self" >大邑县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510131" target="_self" >蒲江县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510132" target="_self" >新津县</a></li>
+                </ul>
+				</div>
+			</div>
+        </div>
+    </form>
+</div>
+<div class="sitebox01">您现在的位置：<a href="/">房产百科网</a> <b>&raquo;</b> 关于我们</div>
+    <div class="sjhq">
+    	<div class="ds_tit">数据行情</div>
+        <div class="date_flash"><img src="../ui/img/datashow_flash.gif" /></div>
+<div class="date_table">
+        	<dl>
+            	<dt><b>2010年1月成都市区房地产市场行情汇总</b></dt>
+                <dt><table width="609"  id="border" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td rowspan="2" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd">&nbsp;</td>
+                  <td height="40" colspan="2" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>面积类（平方米）</strong></td>
+                  <td colspan="2" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>套数类（套）</strong></td>
+                  <td rowspan="2" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>均价</strong></td>
+                </tr>
+                  <tr>
+                    <td height="40" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>供应面积</strong></td>
+                    <td height="40" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>销售面积</strong></td>
+                    <td height="40" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>供应套数</strong></td>
+                    <td height="40" align="center" valign="middle" bordercolor="#c0c0c0" bgcolor="#c9e4bd"><strong>销售套数</strong></td>
+                  </tr>
+                  <tr>
+                    <td height="40" align="center" valign="middle"><strong>数值</strong></td>
+                    <td height="40" align="center" valign="middle">77</td>
+                    <td height="40" align="center" valign="middle">34</td>
+                    <td height="40" align="center" valign="middle">8567</td>
+                    <td height="40" align="center" valign="middle">3406</td>
+                    <td height="40" align="center" valign="middle">6502</td>
+                </tr>
+                  <tr>
+                    <td height="40" align="center" valign="middle"><strong>比上月</strong></td>
+                    <td height="40" align="center" valign="middle">-44.8%</td>
+                    <td height="40" align="center" valign="middle">-86.9%</td>
+                    <td height="40" align="center" valign="middle">-16.2%</td>
+                    <td height="40" align="center" valign="middle">-86.3%</td>
+                    <td height="40" align="center" valign="middle">8.2%</td>
+                </tr>
+                </table>
+              </dt>
+                <dd><a href="http://125.68.57.73/news/index.php?action=view&id=267" target="_blank" class="date_01">成都市区2010年1月房地产市场行情</a></dd>
+                <dd><a href="http://125.68.57.73/news/index.php?action=view&id=266" target="_blank" class="date_02">成都市区2009年第四季度市场行情</a></dd>
+                <dd style="padding-left:560px;width:60px;background:url(ui/img/dot.jpg) no-repeat 550px 4px"><a href="http://125.68.57.73/news/index.php?action=list&cid=196" target="_blank" style="text-decoration:underline">更多信息</a></dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+  </div>
+    <div class="scdc">
+    	<div class="ds_tit">市场报告</div>
+        <dl>
+        	<dt><a href="http://125.68.57.73/news/index.php?action=view&id=268" target="_blank">2010年2月成都房地产市场分析报告</a></dt>
+            <dd>本月住宅物业表现为：供应量下降，销售量上升，待销量下降，价格继续上涨。住宅物业供应面积15.6万平方米，比上月下降79.8%，供应套数1757套，降79.5%；销售面积39.5万平方米，比上月升17.3%,销售套数4329套，升27.1%。销售量在本月有所回升，但由于恰逢春节的节点供应量较少……</dd>
+        </dl>
+        <dl style="border-left:1px solid #d1d1d1;border-right:1px solid #d1d1d1">
+        	<dt><a href="http://125.68.57.73/news/index.php?action=view&id=267" target="_blank">2010年1月成都房地产市场分析报告</a></dt>
+            <dd>本月住宅物业表现为：供应量下降，销售量大幅下降，价格微升。住宅物业供应面积77万平方米，比上月下降44.8%，供应套数8567套，降39.8%；销售面积34万平方米，比上月大幅下降86.9%,销售套数3406套，降86.3%。销售量本月的大幅下降归因于去年年底优惠政策的截止以及近期房地产宏观调控的趋紧。……</dd>
+        </dl>
+        <dl>
+        	<dt><a href="http://125.68.57.73/news/index.php?action=view&id=266" target="_blank">2009年第四季成都房地产市场分析报告</a></dt>
+            <dd>本季住宅物业表现为：供应量下降，销售量大幅上升，价格快速上涨。住宅物业供应面积237万平方米，比上季度下降14.8%，供应套数25936套，降15.2%；销售面积489万平方米，比上季度大幅上升50.5%,销售套数52031套，升50.5%。销售量的大幅提升使市场房源量明显紧缺。……</dd>
+        </dl>
+        <div class="clear"></div>
+    </div>
+    <div class="dcgw">
+    	<div class="ds_tit">调查顾问</div>
+        <div  class="dcgw_bg">
+        <div class="yjzxjs"><font>房产百科网·房地产研究中心</font>以专业、准确、精细的市场研究策划服务为主要工作目标，拥有全面的成都房地产市场信息数据库，全力服务于房地产行业产品调查研究、决策分析，为高品质房产企业提供专业化水平的服务，中心提供如下系列服务：</div>
+        <div>
+        	<ul>
+            	<li>·定期市场研究报告服务</li>
+                <li>·竞争楼盘市场跟踪服务</li>
+                <li>·定期市场数据专项服务</li>
+                <li>·项目可行性研究报告</li>
+                <li>·项目市场调研、前期定位分</li>
+            </ul>
+            <ul style="padding-left:0px">
+                <li>咨询手机：133-0818-9969</li>
+                <li>服务邮箱：<a href="mailto:zhidinghudong@163.com" target="_blank" >zhidinghudong@163.com</a></li>
+                <li>服务热线：028-6668 5775</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+	<div class="footer-link" style="text-align:center">
+		<ul class="footerLinks" style="margin-left:310px">
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">网站服务</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li><a href="#">版权声明</a></li>
+			<li><a href="#">投诉建议</a></li>
+			<li><a href="#">友情链接</a></li>
+		</ul>
+	</div>
+	<div class="footer-icp f_666">
+		<p>@ 2006-2010 funbk.com, All Rights Reserved<br />粤ICP备10071775号</p>
+	</div>
+</div>
+</div>
+</body>
+</html>

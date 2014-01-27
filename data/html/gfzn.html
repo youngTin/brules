@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>新楼盘详细介绍页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/ui/css/common.css" />
+<link href="/ui/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/ui/news/css/news.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ui/newhouse/js/jquery_last.js"></script>
+<style>
+.sitebox01{text-align:left;height:23px;line-height:23px;margin:10px 0 6px 0;}
+</style>
+</head>
+
+<body>
+<div class="outer">
+<div class=header>
+    <div class="login-block">
+        <span>欢迎您访问房产百科网！<!--<a href="#">登录</a> 或 <a href="#">注册</a>--></span><br />
+    </div>
+    <div class="menu">
+        <ul class="topnav">
+            <li {if $cur=='home'}class="cur"{/if}><a href="/">首 页</a> </li>
+            <li {if $cur=='newhouse'}class="cur"{/if} onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/newhouse/search.php">新 房</a>
+				<ul class=subnav>
+                    <li style="width:100px">
+                    <ul id="layout-list">
+                        <li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">住宅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22304">商业楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22305">办公楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22301">别墅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">畅销楼盘</a></li>
+                    </ul>
+                    </li>
+                    <li style="width:200px">
+                    <ul id="layout-list">
+                        <li class="f_bold f_333" style="width:180px;">购房工具</li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">楼盘地图</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">购房指南</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php">楼盘速查</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">政务公开服务</a></li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">预售公示</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">贷款计算器</a></li>
+                    </ul>
+                    </li>
+                </ul>
+			</li>
+            <li {if $cur=='resold'}class="cur"{/if}><a href="/esf/index.php?house_type=2">二手房</a> </li>
+		    <li {if $cur=='rent'}class="cur"{/if}><a href="/esf/index.php?house_type=1">租 房</a> </li>
+            <li {if $cur=='news'}class="cur"{/if}><a href="/news/index.php">房产资讯</a></li>
+        </ul>
+    </div>
+    <form name="searchform" action="/newhouse/search.php" method="get">
+        <div class="search">
+            <div class="key-word">
+                <span class="f_bold f_gray f_14px">关键字 </span>
+                <input class="input_460px" name="keyword" />
+                <input type="submit" class="btn" value=" " />
+            </div>
+            <div class="chos_area">
+                <div id="search-region">
+					<ul>
+					<li>区域:</li>
+					<li><a href="/newhouse/search.php" target="_self" class="f_orange f_bold">不限</a></li>
+									<li><a href="/newhouse/search.php?borough=510104" target="_self" >锦江区</a></li>
+									<li><a href="/newhouse/search.php?borough=510105" target="_self" >青羊区</a></li>
+									<li><a href="/newhouse/search.php?borough=510106" target="_self" >金牛区</a></li>
+									<li><a href="/newhouse/search.php?borough=510107" target="_self" >武侯区</a></li>
+									<li><a href="/newhouse/search.php?borough=510108" target="_self" >成华区</a></li>
+									<li><a href="/newhouse/search.php?borough=510109" target="_self" >高新区</a></li>
+									<li><a href="/newhouse/search.php?borough=510112" target="_self" >龙泉驿区</a></li>
+									<li><a href="/newhouse/search.php?borough=510113" target="_self" >青白江区</a></li>
+									<li><a href="/newhouse/search.php?borough=510121" target="_self" >金堂县</a></li>
+									<li><a href="/newhouse/search.php?borough=510122" target="_self" >双流县</a></li>
+									<li><a href="/newhouse/search.php?borough=510123" target="_self" >温江区</a></li>
+									<li><a href="/newhouse/search.php?borough=510124" target="_self" >郫县</a></li>
+									<li><a href="/newhouse/search.php?borough=510125" target="_self" >新都区</a></li>
+									<li><a href="/newhouse/search.php?borough=510129" target="_self" >大邑县</a></li>
+									<li><a href="/newhouse/search.php?borough=510131" target="_self" >蒲江县</a></li>
+									<li><a href="/newhouse/search.php?borough=510132" target="_self" >新津县</a></li>
+								</ul>
+				</div>
+			</div>
+        </div>
+    </form>
+</div>
+<div class="clear"></div>
+<div class="sitebox01">您现在的位置：<a href="">房产百科网</a> <b>></b> <a href="">房产资讯</a></div>
+<div class="main">
+  <div class="ty_left">
+  	<div class="gfzn_box">
+    	<div class="gfzn_tit"><b>购房知识</b></div>
+        <div class="gfzs">
+        	<ul>
+            	<li><a href="/tpl/gfzn/spf.html">商品房</a></li>
+                <li><a href="">经济适用房</a></li>
+                <li><a href="">二手房（存量房）</a></li>
+                <li><a href="">商品房预售</a></li>
+                <li><a href="">高档房</a></li>
+                <li><a href="">房产证</a></li>
+                <li class="bg_fff"><a href="">土地证</a></li>
+                <li class="bg_fff"><a href="">小产权</a></li>
+                <li class="bg_fff"><a href="">产权年限</a></li>
+                <li class="bg_fff"><a href="">共有产权</a></li>
+                <li class="bg_fff"><a href="">契税</a></li>
+                <li class="bg_fff"><a href="">营业税</a></li>
+                <li><a href="">个人所得税</a></li>
+                <li><a href="">维修基金</a></li>
+                <li><a href="">住房补贴</a></li>
+                <li><a href="">得房率</a></li>
+                <li><a href="">容积率</a></li>
+                <li><a href="">绿化率</a></li>
+                <li class="bg_fff"><a href="">公摊面积</a></li>
+                <li class="bg_fff"><a href="">使用面积</a></li>
+                <li class="bg_fff"><a href="">按揭</a></li>
+                <li class="bg_fff"><a href="">转按揭</a></li>
+                <li class="bg_fff"><a href="">商业贷款</a></li>
+                <li class="bg_fff"><a href="">公积金</a></li>
+                <li><a href="">组合贷款</a></li>
+                <li><a href="">层高</a></li>
+                <li><a href="">净高</a></li>
+                <li><a href="">进深</a></li>
+                <li><a href="">开间</a></li>
+                <li><a href="">小户型</a></li>
+                <li class="bg_fff"><a href="">毛坯</a></li>
+                <li class="bg_fff"><a href="">精装房</a></li>
+                <li class="bg_fff"><a href="">物业费</a></li>
+                <li class="bg_fff"><a href="">房屋抵押</a></li>
+                <li class="bg_fff"><a href="">期房</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="gfzn_tit"><b>购房流程</b></div>
+        <div class="gflc">
+            	<dl>
+                	<dt>前期准备</dt>
+                    <dd><a href="">1.核算家庭收入</a></dd>
+                    <dd><a href="">2.明确房产所有人</a></dd>
+                    <dd><a href="">3.明确房屋价格位置</a></dd>
+                    <dd><a href="">4.房屋基础知识</a></dd>
+                </dl>
+                <dl>
+                	<dt>网上选房</dt>
+                    <dd><a href="">1.楼盘搜索</a></dd>
+                    <dd><a href="">2.户型搜素</a></dd>
+                    <dd><a href="">3.专家指点买房</a></dd>
+                    <dd><a href="">4.量身选房</a></dd>
+                </dl>
+                <dl>
+                	<dt>实地看房</dt>
+                    <dd><a href="">1.验看五证二书</a></dd>
+                    <dd><a href="">2.销售过招</a></dd>
+                    <dd><a href="">3.实地考察</a></dd>
+                    <dd><a href="">4.选择户型</a></dd>
+                </dl>
+                <dl>
+                	<dt>楼盘比较</dt>
+                    <dd><a href="">1.地段交通</a></dd>
+                    <dd><a href="">2.配套</a></dd>
+                    <dd><a href="">3.开发商实力</a></dd>
+                    <dd><a href="">4.户型</a></dd>
+                </dl>
+                <dl>
+                	<dt>认&nbsp;&nbsp;购</dt>
+                    <dd><a href="">1.排号</a></dd>
+                    <dd><a href="">2.交定金</a></dd>
+                    <dd><a href="">3.签订认购书</a></dd>
+                    <dd><a href="">4.如何退定金</a></dd>
+                </dl>
+                <dl>
+                	<dt>合&nbsp;&nbsp;同</dt>
+                    <dd><a href="">1.购房合同范本</a></dd>
+                    <dd><a href="">2.补充协议</a></dd>
+                    <dd><a href="">3.合同陷阱</a></dd>
+                    <dd><a href="">4.如何签订合同</a></dd>
+                </dl>
+                <dl>
+                	<dt>贷&nbsp;&nbsp;款</dt>
+                    <dd><a href="">1.商业贷款</a></dd>
+                    <dd><a href="">2.公积金贷款</a></dd>
+                    <dd><a href="">3.一次性付款</a></dd>
+                    <dd><a href="">4.分期贷款</a></dd>
+                </dl>
+                <dl>
+                	<dt>收&nbsp;&nbsp;房</dt>
+                    <dd><a href="">1.收房流程</a></dd>
+                    <dd><a href="">2.如何验收房屋</a></dd>
+                    <dd><a href="">3.缴纳税费</a></dd>
+                    <dd><a href="">4.收房实例解析</a></dd>
+                </dl>
+                <dl>
+                	<dt>入住装修</dt>
+                    <dd><a href="">1.房屋隐蔽问题</a></dd>
+                    <dd><a href="">2.建材商城</a></dd>
+                    <dd><a href="">3.装修图片</a></dd>
+                </dl>
+                <dl>
+                	<dt>房产证</dt>
+                    <dd><a href="">1.业主办理房产证</a></dd>
+                    <dd><a href="">2.委托他人办理</a></dd>
+                    <dd><a href="">3.办理步骤</a></dd>
+                    <dd><a href="">4.不登记的弊端</a></dd>
+                </dl>
+                <dl>
+                	<dt>物&nbsp;&nbsp;业</dt>
+                    <dd><a href="">1.物业管理内容</a></dd>
+                    <dd><a href="">2.成立业主委员会</a></dd>
+                    <dd><a href="">3.物业纠纷</a></dd>
+                    <dd><a href="">4.更换物业</a></dd>
+                </dl>
+                <dl>
+                	<dt>退&nbsp;&nbsp;房</dt>
+                    <dd><a href="">1.退房条件</a></dd>
+                    <dd><a href="">2.退房手续</a></dd>
+                    <dd><a href="">3.法律维权</a></dd>
+                </dl>
+                <dl>
+                	<dt>二手房</dt>
+                    <dd><a href="">1.二手房买卖流程</a></dd>
+                    <dd><a href="">2.买卖合同</a></dd>
+                    <dd><a href="">3.买卖纠纷</a></dd>
+                    <dd><a href="">4.房源发布</a></dd>
+                </dl>
+                <dl>
+                	<dt>租&nbsp;&nbsp;房</dt>
+                    <dd><a href="">1.房屋租赁合同</a></dd>
+                    <dd><a href="">2.房源发布</a></dd>
+                </dl>
+                <div class="clear"></div>
+        </div>
+        <div class="gfzn_tit"><b>购房工具</b></div>
+        <div class="gfgj">
+        	<ul>
+            	<li><a href="">贷款计算工具</a></li>
+                <li><a href="">政务服务公开指南</a></li>
+                <li><a href="">各类合同示范文档</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="gfzn_tit"><a name="zxfwq" style="color:#000"><b>咨询服务区</b></a></div>
+        <div class="zxfwq">
+        	<dl>
+            	<dt>成都市房产管理局</dt>
+                <dd><span>局值班室（24小时）</span>86279772</dd>
+                <dd><span>房产政务中心总咨询台</span>86279694&nbsp;&nbsp;86280434</dd>
+                <dd><span>房产政务中心二手房过户</span>86279488&nbsp;&nbsp;86279391</dd>
+                <dd><span>房产政务中心登记进度查询</span>86279291&nbsp;&nbsp;86279758</dd>
+                <dd><span>行业监督（成都市房产管理监察大队）</span>86279090</dd>
+                <dd><span>房屋安全咨询热线（8∶30-22∶00）</span>86627753&nbsp;&nbsp;86513178</dd>
+            </dl>
+            <dl style="border-right:1px solid #bcbcbc">
+            	<dt>成都市国土资源局</dt>
+                <dd><span>接待电话</span>8705000</dd>
+                <dd><span>执法监察处</span>87052239&nbsp;&nbsp;87368789</dd>
+                <dd><span>政策法规处</span>87050062</dd>
+                <dd><span>土地规划处</span>87052239&nbsp;&nbsp;87368789</dd>
+                <dd><span>土地利用处</span>87050047&nbsp;&nbsp;87050385</dd>
+                <dd><span>耕地保护处</span>87050075&nbsp;&nbsp;87050041</dd>
+                <dd><span>地籍管理处</span>87051532&nbsp;&nbsp;87050046</dd>
+            </dl>
+            <dl style="margin-top:-1px;>margin-top:-17px">
+            	<dt>成都市规划局</dt>
+                <dd><span>成都市规划执法监督</span>86259909</dd>
+                <dd><span>政策法规处</span>83188438</dd>
+                <dd><span>综合管理处(行政审批处)</span>83183606</dd>
+                <dd><span>详细规划管理处</span>83186537</dd>
+                <dd><span>总体规划管理处</span>83196375</dd>
+                <dd><span>建筑规划管理处</span>83183590</dd>
+                <dd><span>市政规划管理处</span>83185753</dd>
+            </dl>
+            <dl style="border-right:1px solid #bcbcbc;margin-top:-1px;>margin-top:-17px">
+            	<dt>房产百科网</dt>
+                <dd><span>二手房</span>84649610</dd>
+                <dd><span>租房</span>84649610</dd>
+                <dd><span>新闻热线</span>025-83202664</dd>
+                <dd><span>广告热线</span>025-83202664</dd>
+            </dl>
+            <div class="clear"></div>
+        </div>
+    </div>
+  </div>
+  <div class="ty_right">
+      <!--最新开盘 开始-->
+  <div class="lp_compare">
+        	<div class="lp_tit">最新开盘</div>
+            <div class="lp_c_list">
+            	<ul>
+                    <li><span class="price"><b>价格</b></span><span class="s_time"><b>开盘时间</b></span><b>项目名称</b></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                    <li><span class="price">5000元/m²</span><span class="s_time">2008-09-10</span><a href="#">蓝光花满庭</a></li>
+                </ul>
+            </div>
+            <div class="lp_c_b"></div>
+        </div>
+        <!--最新开盘 结束-->
+        
+        <!--最新优惠 开始-->
+        <div class="lp_compare">
+        	<div class="lp_tit">最新优惠</div>
+            <div class="lp_c_list">
+            	<ul>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                    <li><a href="#">【央墅】中海会0.5% 一次性付款1% </a></li>
+                </ul>
+            </div>
+            <div class="lp_c_b"></div>
+        </div>
+        <!--最新优惠 结束-->
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="footer">
+<div class="footer">
+	<div class="footer-link" style="text-align:center">
+		<ul class="footerLinks">
+			<li><a href="/tpl/about.htm">关于我们</a></li>
+			<li><a href="#">网站服务</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li><a href="#">版权声明</a></li>
+			<li><a href="#">投诉建议</a></li>
+			<li><a href="#">友情链接</a></li>
+		</ul>
+	</div>
+	<div class="footer-icp f_666">
+		<p>@ 2006-2010 funbk.com, All Rights Reserved<br />粤ICP备10071775号
+</p>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

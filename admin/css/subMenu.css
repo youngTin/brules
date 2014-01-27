@@ -1,0 +1,55 @@
+body{
+	font-family:宋体, Arial, Helvetica, sans-serif;font-size:13px;
+}
+div.submenu {
+	width: 178px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding-bottom: 10px;
+	background: url(../../admin/images/submenu/bottom.gif) no-repeat  right bottom;
+	color: #fff;
+}
+
+div.submenu div {
+	background: url(../../admin/images/submenu/title.gif) no-repeat;
+	overflow: hidden;
+}
+div.submenu div:first-child,.first-child {
+	background: url(../../admin/images/submenu/toptitle.gif) no-repeat;border-top:none;
+}
+div.submenu div.first-child {
+	background: url(../../admin/images/submenu/toptitle.gif) no-repeat;border-top:none;
+}
+div.submenu div.collapsed {
+	height:31px;margin-bottom:1px;
+}
+div.submenu div span {
+	display: block;
+	padding: 0px 25px;
+	font-weight: bold;
+	line-height:31px;
+	color:#000;
+	background: url(../../admin/images/submenu/expanded.gif) no-repeat 10px center;
+	border-top: 0px solid #D2EEFB;
+	cursor:pointer;
+}
+div.submenu div.collapsed span {
+	background-image: url(../../admin/images/submenu/collapsed.gif);
+}
+div.submenu div a {
+	padding: 2px 30px;
+	line-height:23px;
+	background:url(../../admin/images/submenu/bg_menu.png) no-repeat;
+	display: block;
+	border-bottom: 0px solid #ddd;
+	color: #066;
+}
+
+div.submenu div a.current {
+	background : #ccc;line-height:23px;
+}
+div.submenu div a:hover {
+	background :  url(../../admin/images/submenu/bg_menu2.png) no-repeat;
+	color: #000;
+	text-decoration: none;line-height:23px;
+}

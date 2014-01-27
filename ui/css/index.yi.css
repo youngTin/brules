@@ -1,0 +1,31 @@
+.banner{overflow: hidden;height: 390px;}
+.banner ul{overflow:hidden;}
+#bshow li{height:360px;display:none;}
+#bshow li.cur{display:block;}
+#bshow .bs01{background: url('/ui/img/banner/ban_bg1.jpg') repeat-x 50% 50%;}
+#bshow .bs02{background: url('/ui/img/banner/ban_bg2.jpg') repeat-x 50% 50%;}
+#bshow .bs03{background: url('/ui/img/banner/ban_bg3.jpg') repeat-x 50% 50%;}
+#bshow .bs04{background: url('/ui/img/banner/ban_bg4.jpg') repeat-x 50% 50%;}
+
+.cb-main a{border-left:dashed 1px #E2E2E2;border-top:dashed 1px #E2E2E2;width:494px;height:300px;display: inline-block;border-right:dashed 1px #FFFFFF;border-bottom:dashed 1px #FFFFFF;text-decoration: none;color:#333333;}
+.cb-main a:hover{border:solid 1px #C41414 ;}
+.cb-main .cbm-abg1{background: url('/ui/img/index_img3.jpg') no-repeat right bottom;}
+.cb-main .cbm-abg2{background: url('/ui/img/index_img4.jpg') no-repeat right bottom;border-right:dashed 1px #E2E2E2;}
+.cb-main .cbm-abg3{background: url('/ui/img/index_img5.jpg') no-repeat right bottom;border-bottom:dashed 1px #E2E2E2;}
+.cb-main .cbm-abg4{background: url('/ui/img/index_img6.jpg') no-repeat right bottom;border-right:dashed 1px #E2E2E2;border-bottom:dashed 1px #E2E2E2;}
+
+.cb-main p{margin: 0 0 0 25px;}
+.cb-main .cbm-head {font-size: 20px;font-weight: 600;margin-top: 35px;}
+.cb-main .cbm-head span{font-size: 30px;padding-right: 5px;}
+.cb-main .cbm-note{color: #999999;font-size: 14px;margin-top: 5px;}
+.cb-main .cbm-price{margin-top: 70px;color: #C41414;font-size: 18px;}
+.cb-main .cbm-price i{font-size: 30px;font-style: normal;}
+.cb-main .cbm-price span{font-size: 40px;font-family: Arial Black;margin: 0 5px;}
+
+.cb-dist{background: url('/ui/img/index_img2.jpg') no-repeat right center;height:300px;border:1px solid #F0F0F0;margin-top: 20px;padding-left: 35px;}
+.cb-dist h3{font-size: 30px;margin-top: 25px;font-weight: 100;}
+.cb-dist span{float:left;color: #999999;font-size: 14px;line-height: 24px;}
+.cb-dist span a{color: #999999;}
+.cb-dist span a:hover{color: #C41414;text-decoration: underline;}
+.cb-s{width: 100%;overflow: hidden;padding:20px 0 0 70px;}
+.cb-dist  .cbs-button{background: url("/ui/img/index_search.jpg") no-repeat;width:202px;height:52px;text-indent: -99em;border:0;float: left;}

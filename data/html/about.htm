@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>房产百科网</title>
+<link type="text/css" rel="stylesheet" href="/ui/css/common.css" />
+<link href="/ui/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/ui/newhouse/css/newhxx.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ui/newhouse/js/jquery_last.js"></script>
+<style>
+.sitebox01{text-align:left;height:23px;line-height:23px;margin:10px 0 6px 0;}
+</style>
+</head>
+
+<body>
+<div class=header>
+    <div class="login-block">
+        <span>欢迎您访问房产百科网！<!--<a href="#">登录</a> 或 <a href="#">注册</a>--></span><br />
+    </div>
+    <div class="menu">
+        <ul class="topnav">
+            <li {if $cur=='home'}class="cur"{/if}><a href="/">首 页</a> </li>
+            <li {if $cur=='newhouse'}class="cur"{/if} onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/newhouse/search.php">新 房</a>
+				<ul class=subnav>
+                    <li style="width:100px">
+                    <ul id="layout-list">
+                        <li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">住宅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22304">商业楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22305">办公楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22301">别墅楼盘</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php?pmtype=22308">畅销楼盘</a></li>
+                    </ul>
+                    </li>
+                    <li style="width:200px">
+                    <ul id="layout-list">
+                        <li class="f_bold f_333" style="width:180px;">购房工具</li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">楼盘地图</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">购房指南</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/newhouse/search.php">楼盘速查</a></li>
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">政务公开服务</a></li>
+						<!--<li><img src="/ui/img/dot.jpg" /><a href="#">预售公示</a></li>-->
+						<li><img src="/ui/img/dot.jpg" /><a href="/news/index.php">贷款计算器</a></li>
+                    </ul>
+                    </li>
+                </ul>
+			</li>
+            <li {if $cur=='resold'}class="cur"{/if}><a href="/esf/index.php?house_type=2">二手房</a> </li>
+		    <li {if $cur=='rent'}class="cur"{/if}><a href="/esf/index.php?house_type=1">租 房</a> </li>
+            <li {if $cur=='news'}class="cur"{/if}><a href="/news/index.php">房产资讯</a></li>
+        </ul>
+    </div>
+    <form name="searchform" action="/newhouse/search.php" method="get">
+        <div class="search">
+            <div class="key-word">
+                <span class="f_bold f_gray f_14px">关键字 </span>
+                <input class="input_460px" name="keyword" />
+                <input type="submit" class="btn" value=" " />
+            </div>
+            <div class="chos_area">
+                <div id="search-region">
+					<ul>
+					<li>区域:</li>
+					<li><a href="/newhouse/search.php" target="_self" class="f_orange f_bold">不限</a></li>
+                    <li><a href="/newhouse/search.php?borough=510104" target="_self" >锦江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510105" target="_self" >青羊区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510106" target="_self" >金牛区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510107" target="_self" >武侯区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510108" target="_self" >成华区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510109" target="_self" >高新区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510112" target="_self" >龙泉驿区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510113" target="_self" >青白江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510121" target="_self" >金堂县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510122" target="_self" >双流县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510123" target="_self" >温江区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510124" target="_self" >郫县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510125" target="_self" >新都区</a></li>
+                    <li><a href="/newhouse/search.php?borough=510129" target="_self" >大邑县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510131" target="_self" >蒲江县</a></li>
+                    <li><a href="/newhouse/search.php?borough=510132" target="_self" >新津县</a></li>
+                </ul>
+				</div>
+			</div>
+        </div>
+    </form>
+</div>
+<div class="outer">
+<div class="sitebox01">您现在的位置：<a href="/">房产百科网</a> <b>&raquo;</b> 关于我们</div>
+<div class="main">
+    <div class="ty_left">
+    	<!--关于我们联系我们 开始-->
+    	<div class="au_title"><a name="gywm">关于我们</a></div>
+        <div class="au_main">
+        	<div><b>房产百科网</b>是成都市历史最悠久、最专业的房源查询中心平台，提供房地产市场完善、及时的信息咨询服务，被业界和消费者广泛认同；凭借"服务于民，为买房人便捷找到理想家园"的服务理念受到广大购房者的欢迎，历经数次技术改进后的房产百科网以崭新的web2.0面貌呈现，实现更好为广大购房者服务的目标。</div>
+            <div>
+            	<ul class="contact">
+                	<li>联系地址：四川省成都市顺城大街27号</li>
+                    <li>邮&nbsp;&nbsp;&nbsp;&nbsp;编：610017</li>
+                    <li>咨询手机：133-0818-9969</li>
+                    <li>服务邮箱：zhidinghudong@163.com</li>
+                    <li>服务热线：028-6668 5775</li>
+                </ul>
+            </div>
+        </div>
+        <!--关于我们联系我们 结束-->
+        
+        <!--网站服务 开始-->
+        <div class="au_title"><a name="wzfw">网站服务</a></div>
+        <div class="au_main">
+        	<dl>
+            	<dt>1.网站宣传服务</dt>
+                <dd>凭借网站的信息、人气及舒适的功能服务，提供行业客户精准的宣传效果。<br />&nbsp;&nbsp;</dd>
+                <dt>2.网络营销</dt>
+                <dd>凭借多年的网络营销经验、在网络推广、渠道、活动方面提供行业客户多元化的整合营销体验。<br />&nbsp;&nbsp;</dd>
+                <dt>3.房地产数据调研顾问</dt>
+                <dd>&nbsp;&nbsp;&nbsp;&nbsp;房产114网·房地产数据研究中心以专业、准确、精细的市场数据服务、研究策划服务为主要工作目标，拥有庞大系统的成都房地产市场信息数据库，全力服务于房地产行业产品调查研究、决策分析，为高品质房产企业提供专业化水平的服务，提供如下系列服务：</dd>
+                <dd>&nbsp;&nbsp;&nbsp;&nbsp;·定期市场研究报告服务（月刊、季刊）<br />&nbsp;&nbsp;&nbsp;&nbsp;·竞争楼盘市场跟踪服务<br />&nbsp;&nbsp;&nbsp;&nbsp;·定期市场数据专项服务<br />&nbsp;&nbsp;&nbsp;&nbsp;·项目可行性研究报告<br />&nbsp;&nbsp;&nbsp;&nbsp;·项目市场调研、前期定位分析<br />&nbsp;&nbsp;</dd>
+                <dt>4.楼盘销售代理服务</dt>
+                <dd>提供多元化的渠道营销解决方案，以新型销售模式开拓楼盘销售代理服务。</dd>
+          </dl>
+        </div>
+        <!--网站服务 结束-->
+        
+        <!--诚聘精英 开始-->
+        <div class="au_title"><a name="cpjy">诚聘精英</a></div>
+        <div class="au_main">
+        	<dl>
+            	<dt>诚邀营销精英加盟</dt>
+                <dd>学历要求：大专以上学历</dd>
+                <dd>任职要求：从事房地产、广告营销1年以上相关工作经验，团队精神较好的，能吃苦、勤跑动，能适应单独出差的，有经验者优先；<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语音清晰标准有条理，形象佳；<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄21岁-35岁，男女不限，形象良好，语言沟通能力强；<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熟悉网络文化，有大型网站工作经验，能力较强者可优先。</dd>
+                <dd>工作地区：四川-成都</dd>
+                <dd>待&nbsp;&nbsp;&nbsp;&nbsp;遇：底薪+提成</dd>
+                <dd>报名方法：以上招聘人员应把个人自传简历（学历证书复印件、工作经历、应聘岗位、个人近照）到至公司邮箱，<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有材料公司将给予保密，因材料较多恕概不退还。</dd>
+                <dd>招考方式：经审核个人应聘材料后将电话通知笔试及面试。</dd>
+                <dd>地&nbsp;&nbsp;&nbsp;&nbsp;址：成都市锦江区顺城大街27号嘉好大厦</dd>
+                <dd>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：zhidinghudong@163.com</dd>
+                <dd>联系电话：028-66685775</dd>
+                <dd>联&nbsp;系&nbsp;人：蒲小姐 </dd>
+          </dl>
+        </div>
+        <!--诚聘精英 结束-->
+        
+        <!--版权申明 开始-->
+        <div class="au_title"><a name="bqsm">版权申明</a></div>
+        <div class="au_main">&nbsp;&nbsp;&nbsp;&nbsp;转载或引用本网内容必须是以新闻性或资料性公共免费信息为使用目的的合理、善意引用，不得对本网内容原意进行曲解、修改，同时注明的"稿件来源于房产百科网(www.funbk.com)"，并自负版权等法律责任。</div>
+        <!--版权申明 结束-->
+        
+        <!--投诉及建议 开始-->
+        <div class="au_title"><a name="tsjjy">投诉及建议</a></div>
+        <div class="au_main">&nbsp;&nbsp;&nbsp;&nbsp;如果您有好的意见或建议，请联系客服QQ:4995071,我们将尽快与您联系！<br /><br /><br /></div>
+        <!--投诉及建议 结束-->
+    </div>
+    <div class="ty_right">
+    	<div class="au_link_menu">
+        	<a href="#gywm" target="_self">关于我们</a>
+            <a href="#gywm" target="_self">联系我们</a>
+            <a href="#wzfw" target="_self">网站服务</a>
+            <a href="#cpjy" target="_self">诚聘精英</a>
+            <a href="#bqsm" target="_self">版权申明</a>
+            <a href="#tsjjy" target="_self">投诉及建议</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="footer">
+	<div class="footer-link" style="text-align:center">
+		<ul class="footerLinks" style="margin-left:310px">
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">网站服务</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li><a href="#">版权声明</a></li>
+			<li><a href="#">投诉建议</a></li>
+			<li><a href="#">友情链接</a></li>
+		</ul>
+	</div>
+	<div class="footer-icp f_666">
+		<p>@ 2006-2010 funbk.com, All Rights Reserved<br />粤ICP备10071775号
+</p>
+	</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/*提示信息*/
+.yqts_box{background:url(../images/icon_tishi.gif) no-repeat 8px 6px;margin:0 0 10px 0px;height:28px;line-height:30px;overflow:hidden}
+.yqts_box font{color:#f30;padding:0 3px;font-size:12px}
+/*tab css*/
+.fygl_menu{height:24px;overflow:hidden;line-height:24px;}
+.fygl_menu li{float:left;padding:0 10px;height:24px;border-bottom:none;margin-right:12px}
+.fygl_menu li.cur{background:#9A7D53;border:1px solid #CCB394;}
+.fygl_menu li.cur a{color:#ffffff}
+.fygl_menu li.cur a:hover{ text-decoration:none}
+
+/*定义表格开始*/
+.list_bh{width:86px}
+.list_infor{width:260px;}
+.list_linkinfo{width:220px;}
+.list_count{width:90px}
+.list_buy{width:60px}
+.list_order_sn{width:160px;}
+.list_refresh{width:123px}
+.list_w80{width:80px}
+.list_cz{width:136px;}
+.list_infor p{padding:0;margin: 0;height:20px;line-height: 26px;color:#70706E; overflow:hidden}
+.list_linkinfo p{padding:0;margin: 0;height:20px;line-height: 26px;color:#70706E; overflow:hidden;text-align: left;margin-left: 20px;width:200px;}
+.list_linkinfo p .fr{float: right;padding-right: 5px;}
+.list_linkinfo p a.flink{color: #885B20;text-decoration: none;cursor: text;}
+.list_infor a{width:180px;line-height: 26px;overflow: hidden;display:inline-block;float: left;color:#885B20;}
+
+.glfy_list_box{border:1px solid #9C7C53;border-top:none}
+.glfy_list_box dl{border-top:1px solid #9A7D53; background:#D4BA95}
+.glfy_list_box dl span{display:block;border-right:1px solid #9A7D53;float:left;text-align:center;}
+.glfy_list_box dt span{height:44px;overflow:hidden; background:#D3B994;line-height:44px;color:#533205}
+.glfy_list_box dd{border-top:1px solid #9A7D53;height:50px;overflow:hidden;color:#333; background:#D1C0A6;}
+.glfy_list_box dd.t_two{background:none repeat scroll 0 0 #F2E1CD;border-top:1px solid #9A7D53;color:#333333;overflow:hidden;}
+.glfy_list_box dd.over {
+    border-top: 1px solid #9A7D53;
+    color: #333333;
+    overflow: hidden;
+}
+.glfy_list_box dd font{font-size:12px;color:#ff5500;padding:0 6px}
+.glfy_list_box dd span{display:block;border-right:1px solid #9A7D53;float:left;text-align:center;line-height:50px;height:50px}
+.glfy_list_box dd .list_bh input{float:none;margin:4px 3px 0 0;margin-top:0;padding:0;_margin:0}
+.glfy_list_box .list_infor{text-align:left;padding:0px 0 0 20px;width:230px;overflow: hidden;}
+.glfy_list_box .no_border{border-right:none;}
+
+
+.ac_list{height:25px;border-top:1px solid #fff;background:#D4BA95 url(../images/table_footer_corner.gif) no-repeat;padding:0 10px 0 8px;overflow:hidden}
+.ac_list span{float:right}
+.ac_list span select{width:98px}
+.ac_list font{font-size:12px;color:#FF0000;padding:0 3px}
+.ad_list_shadow{height:10px;background:url(../images/table_footer_shadow.png) no-repeat center;overflow:hidden}
+.count_list{line-height:25px;padding-right:6px}
+
+/* 信息框 */
+.fyglsm{margin:20px 0 0 0;padding:10px 30px 10px 20px;line-height:23px}
+.fyglsm b{font-size:14px;line-height:30px}
+.fyglsm ol li{list-style-type:decimal;list-style-position:outside;padding:0;margin:0 0 0 20px;color:#444}
+.btn_qkms{background:url(../images/btn_qkms.gif) no-repeat 0 0;}
+.fy_ms_box{padding:10px 0 0 0;line-height:26px}
+.fy_ms_box img{padding:2px;border:1px solid #ccc;margin:5px 10px 0 10px;float:left;width:148px;height:113px}
+.fy_ms_box dl{float:left;padding-right:8px}
+.fy_ms_box dt{font-size:14px;font-weight:bold}
+.fy_ms_box dd{color:#444;line-height:23px;border-top:1px dashed #ccc}
+.fy_ms_box dd font{font-size:12px;color:#f00}
+
+/***积分管理***/
+
+/*
+.jf_infor{height:36px;line-height:36px;padding:0 8px;background:#daf0fe;overflow:hidden}
+.jf_infor font font{font-size:12px;color:#f30}
+.jf_infor a{color:#f30;font-weight:bold;padding-left:10px;text-decoration:underline}
+.jf_infor span{float:right}
+
+.jf_show_list{line-height:26px;height:162px;overflow:hidden}
+.jf_show_list table{border:#9A7D53 solid;border-width:1px 0 0 0 ;}
+.jf_show_list table tr{border:none 0;}
+.jf_show_list .jf_tlt span{border:#9A7D53 solid;border-width: 0 1px 1px 0;float: left;}
+.jf_show_list td b{border:#9A7D53 solid;border-width: 0 0 1px 0;}
+.jf_show_list .jf_content{background-color: transparent;}
+.jf_show_list .jf_td_r{float:left;width:647px;overflow:hidden;}
+
+.ffgl_box table{border:#ccc solid;border-width:0}
+.ffgl_box td{border:#ccc solid;border-width:0 1px 1px 0}
+.jf_show_list p{float:left;width:96px;height:26px;line-height:26px;border:solid #9A7D53;border-width:0 0 1px 1px;padding:0 0 0 10px;margin:0}
+.jf_show_list .xmmc{width:315px}
+.jf_show_list .sxmmc{overflow:hidden;width:647px}
+.jf_tlt span{display:inline-block;border-left:1px solid #ccc;padding-left:10px;font-weight:bold;width:86px}
+.jf_tlt b{display:block;border-bottom:1px solid #ccc}
+*/
+.jf_show_list {line-height:26px;height:auto;overflow:hidden}
+.jf_show_list table{ border-top:1px solid #9A7D53;border-right:1px solid #9A7D53; border-width:1px 1px 0 0 ; width:100%;}
+/*table head*/
+.jf_head td{ border-bottom:1px solid #9A7D53;border-left:1px solid #9A7D53;text-align: left;padding: 3px 7px; }
+.jf_content td{border-bottom:1px solid #9A7D53; border-left:1px solid #9A7D53;text-align: left;padding: 3px 7px;}
+
+
+
+/**********支付*/
+.pay_div{margin :10px 0px;padding:5px 10px;border:solid 1px #9C7C53;}
+.pay_div h3{color:#E47911;font-size: 14px;font-weight: 600;height:30px;line-height: 30px;border-bottom: dashed 1px #FF8080;}
+.pay_money{color:#FF8080;font-size: 14px;font-weight: 600;}
+.pay_div ul{margin: 10px auto;}
+.pay_li{height:40px;line-height: 40px;word-spacing: 2em;padding:5px;}
+.pay_p_bnt{display: inline-block;height: 60px;line-height: 60px;}
+.go_p_bnt{display: inline-block;height: 30px;line-height: 30px;}
+.pay_bnt_order{width:160px;height:53px;line-height: 53px;background: url(../images/bnt_sub.gif) center center;border:none 0;padding: 0;text-indent: -999em;cursor: pointer;margin-left: 10px;float: left;}
+.go_bnt_order{width:80px;height: 30px;float: left;text-align: center;}
+.go_load{line-height: 16px;height: 24px;padding:5px 0 0 5px;display: inline-block;color: #FF0000;display: none;}
+#showMsg{display: none;width:300px;float: left;margin-left: 20px;color: #FF0000;}
+
+
+/************个人资料*/
+
+.fb_main_li{line-height:36px;overflow:hidden}
+.fb_li_l{width:30px;text-align:right;float:left;padding-right:6px;margin-right:10px}

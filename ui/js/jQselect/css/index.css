@@ -1,0 +1,21 @@
+
+/* CSS Document */
+
+DIV.selectbox-wrapper {
+	BORDER-RIGHT: #b7d1eb 1px solid; BORDER-TOP: #b7d1eb 0px solid; TOP: 18px; BORDER-LEFT: #b7d1eb 1px solid; WIDTH: 82px; BORDER-BOTTOM: #b7d1eb 1px solid; POSITION: absolute; BACKGROUND-COLOR: #fff; TEXT-ALIGN: left;max-height:150px;overflow:auto;
+}
+DIV.selectbox-wrapper UL LI.selected {BACKGROUND-COLOR: #e0ecf7;}
+DIV.selectbox-wrapper UL LI.current {
+	COLOR: #fff; BACKGROUND-COLOR: #36c
+}
+DIV.selectbox-wrapper UL LI {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px;  CURSOR: pointer; LINE-HEIGHT: 20px; PADDING-TOP: 3px
+}
+.selectbox  ,.selectboxs {float:left; border:none;  DISPLAY: block; padding-left:4px; width: 82px; CURSOR: pointer; padding-top:5px; HEIGHT: 19px; background:url(../images/bg01.gif) no-repeat;margin-right:10px;}
+
+.btn{ float:left; display:inline; margin-left:8px; margin-top:2px;}
+
+.stbox{ float:left; width:125px; height:25px; background:url(../images/jia2-input.gif) no-repeat 0 0;}
+.stbox .jia{ float:left; padding-left:1px; padding-top:1px; height:23px; width:23px;}
+
+

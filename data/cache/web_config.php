@@ -1,0 +1,99 @@
+<?php
+$hb = array(
+	'attachdir'=>'attachment',
+	'attachmkdir'=>'4',
+	'bbs_forumsort'=>'tpost',
+	'bbs_membersort'=>'todaypost',
+	'blog_membersort'=>'blogs',
+	'blog_tagsort'=>'blognum',
+	'borough'=>'510104',
+	'ckadmin'=>'0',
+	'ckcomment'=>'0',
+	'cktime'=>NULL,
+	'ckwater'=>'1',
+	'commentdays'=>NULL,
+	'contact'=>'luodongdaxia@163.com',
+	'cvtime'=>'0',
+	'datefm'=>'Y-m-d H:i',
+	'debug'=>'1',
+	'default_tplpath'=>'tpl/news',
+	'discate'=>NULL,
+	'footer'=>NULL,
+	'gzip'=>'0',
+	'hash'=>'kz@51*Ts3',
+	'hidehelp'=>'1',
+	'htmdir'=>'www',
+	'htmext'=>'html',
+	'htmmkdir'=>'2',
+	'icp'=>'123',
+	'ifftp'=>'0',
+	'indexupdate'=>'1',
+	'jpgquality'=>NULL,
+	'lang'=>'utf-8',
+	'listpage'=>NULL,
+	'loginip'=>NULL,
+	'metadescrip'=>'',
+	'metakeyword'=>'车司令、违章代办',
+	'opnum'=>NULL,
+	'perpage'=>'5',
+	'rewrite'=>'0',
+	'rewrite_dir'=>'.php?',
+	'rewrite_ext'=>'.html',
+	'rss_imagenum'=>'5',
+	'rss_itemnum'=>'30',
+	'rss_update'=>'15',
+	'searchmax'=>'100',
+	'searchrange'=>NULL,
+	'searchtime'=>'5',
+	'skipgif'=>'0',
+	'sqlcache'=>NULL,
+	'tagsnum'=>NULL,
+	'tel'=>'028-85241561,  85240379(FAX) ',
+	'template_index'=>'index.tpl',
+	'timedf'=>'8',
+	'title'=>'车司令',
+	'url'=>'http://www.jiazhao999.com',
+	'wapcharset'=>'0',
+	'wapcids'=>NULL,
+	'wapifopen'=>'0',
+	'waplimit'=>NULL,
+	'watercolor'=>'#ff0000',
+	'waterfont'=>'25',
+	'waterheight'=>NULL,
+	'waterimg'=>'logo.gif',
+	'waterpct'=>'50',
+	'waterpos'=>'4',
+	'watertext'=>'水印文字',
+	'watertextlib'=>'simhei.ttf',
+	'watertype'=>'overlay',
+	'waterwidth'=>NULL,
+);
+//定义区域
+define('BOROUGH','510104');
+//是否开启水印
+define('CK_WATER','1');
+//数据库是否抛出异常错误信息,本地调试设置为TRUE
+define('DB_MSG','1');
+//定义网站UI
+define('UI','/ui/news');
+//定义网站title
+define('WEB_TITLE','车司令');
+//定义网站域名
+define('URL','http://www.jiazhao999.com');
+//定义水印字体颜色
+define('FONT_COLOR','#ff0000');
+//定义水印字体大小
+define('FONT_SIZE','25');
+//定义水印图片
+define('WATER_PIC_PATH',WEB_ROOT.DS.'/admin/images'.DS.'water'.DS.'logo.gif');
+//定义水印透明度
+define('WATER_PCT','50');
+//定义水印位置
+define('WATER_POS','4');
+//定义水印文字
+define('WATER_TEXT','水印文字');
+//定义水印字体
+define('FONTFACE_PATH',WEB_ROOT.DS.'includes'.DS.'encode'.DS.'simhei.ttf');
+//使用水印类型
+define('WATER_TYPE','overlay');
+?>
